@@ -5,6 +5,8 @@ import validator from "validator"
 
     // vite - formik - formspree 
 
+    const url = import.meta.env.VITE_KEY_FORMIK;
+
     return (
         <Formik
         initialValues={{ name: "", email: "", message: "" }}
@@ -22,7 +24,6 @@ import validator from "validator"
         }}
         onSubmit={
             (values, { setSubmitting }) => {
-                let url = process.env.URL_FORMIK;
                 let formData = new FormData();
                 formData.append("name", values.name);
                 formData.append("email", values.email);
