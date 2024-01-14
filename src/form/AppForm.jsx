@@ -22,7 +22,7 @@ import validator from "validator"
         }}
         onSubmit={
             (values, { setSubmitting }) => {
-                let url = 'https://formspree.io/f/mbjvgayn';
+                let url = process.env.URL_FORMIK;
                 let formData = new FormData();
                 formData.append("name", values.name);
                 formData.append("email", values.email);
